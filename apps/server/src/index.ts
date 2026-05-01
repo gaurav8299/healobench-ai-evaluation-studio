@@ -15,7 +15,7 @@ app.use(logger());
 app.use(
   "/*",
   cors({
-    origin: ["http://localhost:3001", "http://localhost:3000"],
+    origin: (origin) => origin || "*",
     allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -51,7 +51,7 @@ app.onError((err, c) => {
   return c.json({ error: "Internal server error", message: err.message }, 500);
 });
 
-const port = 8787;
+const port = process.env.PORT ? parseInt(process.env.PORT) : 8787;
 console.log(`🏥 HealoBench API running at http://localhost:${port}`);
 console.log(`   Mode: Mock LLM (no API key required)`);
 console.log(`   Endpoints:`);
