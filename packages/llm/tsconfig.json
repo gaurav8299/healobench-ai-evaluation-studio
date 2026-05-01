@@ -1,0 +1,4 @@
+{
+  "extends": "@test-evals/config/base.json",
+  "include": ["src"]
+}

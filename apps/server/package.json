@@ -10,11 +10,8 @@
     "start": "bun run dist/index.mjs"
   },
   "dependencies": {
-    "@test-evals/auth": "workspace:*",
-    "@test-evals/db": "workspace:*",
-    "@test-evals/env": "workspace:*",
-    "better-auth": "catalog:",
-    "dotenv": "catalog:",
+    "@test-evals/shared": "workspace:*",
+    "@test-evals/llm": "workspace:*",
     "hono": "^4.8.2",
     "zod": "catalog:"
   },
